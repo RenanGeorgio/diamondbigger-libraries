@@ -4,6 +4,7 @@ import typescript from '@rollup/plugin-typescript';
 import { babel } from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
 import { dts } from 'rollup-plugin-dts';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 import pkg from './package.json' assert {type: 'json'};
 
@@ -38,13 +39,10 @@ export default [
     external: [
       'react', 
       'react-dom',
-      '@mui/material',
-      'clsx',
-      'react-icons',
-      'react-wrap-balancer',
-      'react-cookie'
+      'react-wrap-balancer'
     ],
     plugins: [
+      peerDepsExternal(),
       commonjs(),
       resolve(),
       babel({

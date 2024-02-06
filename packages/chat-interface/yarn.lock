@@ -281,6 +281,13 @@
     "@babel/helper-environment-visitor" "^7.22.20"
     "@babel/helper-plugin-utils" "^7.22.5"
 
+"@babel/plugin-external-helpers@^7.23.3":
+  version "7.23.3"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-external-helpers/-/plugin-external-helpers-7.23.3.tgz#399aecdb85f220f62b8fb8df4522f5e6a4e116d5"
+  integrity sha512-W2kdnFytYsSB0X49op/t9Re68rb3m+RN+sK7aD/8lCutepSm22Ms4MmPzMQZ2FYSpItsKlRXG3osVYfLWb83Ug==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.22.5"
+
 "@babel/plugin-proposal-private-property-in-object@7.21.0-placeholder-for-preset-env.2":
   version "7.21.0-placeholder-for-preset-env.2"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-private-property-in-object/-/plugin-proposal-private-property-in-object-7.21.0-placeholder-for-preset-env.2.tgz#7844f9289546efa9febac2de4cfe358a050bd703"
@@ -1826,6 +1833,11 @@ rollup-plugin-dts@^6.1.0:
     magic-string "^0.30.4"
   optionalDependencies:
     "@babel/code-frame" "^7.22.13"
+
+rollup-plugin-peer-deps-external@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-peer-deps-external/-/rollup-plugin-peer-deps-external-2.2.4.tgz#8a420bbfd6dccc30aeb68c9bf57011f2f109570d"
+  integrity sha512-AWdukIM1+k5JDdAqV/Cxd+nejvno2FVLVeZ74NKggm3Q5s9cbbcOgUPGdbxPi4BXu7xGaZ8HG12F+thImYu/0g==
 
 rollup@^4.9.0:
   version "4.9.6"
