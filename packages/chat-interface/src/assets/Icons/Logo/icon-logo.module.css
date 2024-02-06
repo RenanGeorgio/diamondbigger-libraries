@@ -1,0 +1,7 @@
+.container{
+    margin: 1rem 0rem .5rem 1rem;
+    width: 50;
+    height: 50%;
+    border-radius: 2px rgb(255, 255, 255) solid;
+    cursor: pointer;
+}

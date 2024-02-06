@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
-import { MdOutlineArrowUpward } from 'react-icons/md';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import { initialMessages, InputMessage } from '../message';
 import { ContentLine, LoadingChat, ChatGPTMessage } from '../../components';
+import { IconArrow } from '../../assets/Icons';
 
 const COOKIE_NAME = 'nextjs-example-ai-chat-gpt3';
 
@@ -111,7 +111,7 @@ const Chat: React.FC = () => {
         disableGutters={true}>
         <AccordionSummary
           style={{ borderRadius: '5px',  }}
-          expandIcon={<MdOutlineArrowUpward />}
+          expandIcon={<IconArrow />}
           aria-controls="panel1d-content" 
           id="panel1d-header"
           >
