@@ -35,6 +35,8 @@ export default [
       warn(warning)
     },
     external: [
+      'react', 
+      'react-dom',
       '@mui/material',
       'clsx',
       'react-icons',
