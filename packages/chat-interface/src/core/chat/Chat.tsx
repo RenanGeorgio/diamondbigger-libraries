@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
-import Accordion from '@mui/material/Accordion';
+import { CustomAccordion, CustomAccordionItem, CustomAccordionSkeleton } from '../../libs/accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import { initialMessages, InputMessage } from '../message';
 import { ContentLine, LoadingChat, ChatGPTMessage } from '../../components';
 import { IconArrow } from '../../assets/icons';
@@ -102,8 +101,8 @@ const Chat: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ borderRadius: '5px',zIndex:999999, marginBottom:'2rem',maxWidth:300 }}>
-      <Accordion
+    <div style={{ borderRadius: '5px', zIndex:999999, marginBottom:'2rem', maxWidth:300 }}>
+      <CustomAccordion
         sx={{ borderRadius: '5px'}}
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
@@ -124,7 +123,7 @@ const Chat: React.FC = () => {
             borderRadius: '1px',
             marginBottom: '3px'
           }}>
-          <AccordionDetails >
+          <CustomAccordionItem >
             <div  className="rounded-2xl border-zinc-100  lg:border lg:p-6 border-r-2 h-60 overflow-scroll">
               <div style={{overflowY:'scroll',height:'240px'}}>
                 {messages?.length > 0 ? 
@@ -133,7 +132,7 @@ const Chat: React.FC = () => {
                       <ContentLine key={index} role={role} content={content} />
                     ))}
                   </>
-                  : <></>
+                  : <CustomAccordionSkeleton/>
                 }
                 {loading && <LoadingChat />}
               </div>
@@ -145,9 +144,9 @@ const Chat: React.FC = () => {
                 />
               </div>
             </div>
-          </AccordionDetails>
+          </CustomAccordionItem>
         </div>
-      </Accordion>
+      </CustomAccordion>
     </div>
   );
 }
