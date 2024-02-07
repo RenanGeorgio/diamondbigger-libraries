@@ -104,26 +104,19 @@ const Chat: React.FC = () => {
     <div style={{ borderRadius: '5px', zIndex:999999, marginBottom:'2rem', maxWidth:300 }}>
       <CustomAccordion
         sx={{ borderRadius: '5px'}}
-        expanded={expanded === 'panel1'}
-        onChange={handleChange('panel1')}
-        disableGutters={true}>
-        <AccordionSummary
-          style={{ borderRadius: '5px',  }}
-          expandIcon={<IconArrow />}
-          aria-controls="panel1d-content" 
-          id="panel1d-header"
-          >
-            <p>Supply Pharma</p>
-        </AccordionSummary>
-        <div
-          style={{
+        title={() => <span>Supply Pharma</span>}>
+          <p>Supply Pharma</p>
+          <div style={{
             height: '300px',
             background: '#f5f1f0',
             padding: '3px',
             borderRadius: '1px',
             marginBottom: '3px'
           }}>
-          <CustomAccordionItem >
+          <CustomAccordionItem
+            renderToggle={<IconArrow />} 
+            onHeadingClick={({ isOpen }) => handleChange('panel1')}
+          >
             <div  className="rounded-2xl border-zinc-100  lg:border lg:p-6 border-r-2 h-60 overflow-scroll">
               <div style={{overflowY:'scroll',height:'240px'}}>
                 {messages?.length > 0 ? 
