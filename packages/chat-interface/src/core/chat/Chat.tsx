@@ -3,7 +3,6 @@ import { useCookies } from 'react-cookie';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import { initialMessages, InputMessage } from '../message';
 import { ContentLine, LoadingChat, ChatGPTMessage } from '../../components';
 import { IconArrow } from '../../assets/icons';
@@ -115,7 +114,7 @@ const Chat: React.FC = () => {
           aria-controls="panel1d-content" 
           id="panel1d-header"
           >
-            <Typography>Supply Pharma</Typography>
+            <p>Supply Pharma</p>
         </AccordionSummary>
         <div
           style={{
