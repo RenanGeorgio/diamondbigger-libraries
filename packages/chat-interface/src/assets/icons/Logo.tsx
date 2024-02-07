@@ -1,4 +1,4 @@
-import styles from './icon-logo.module.css';
+import style from './Logo.module.css';
 
 export type Props = {
   backgroundColor: string;
@@ -12,7 +12,7 @@ export default function IconLogo({
   ...props
 }: Props) {
   return (
-    <div className={styles.container}>
+    <div className={style.container}>
       <svg
         height="40px"
         viewBox="0 0 30 30"

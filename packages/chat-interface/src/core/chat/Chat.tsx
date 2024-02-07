@@ -6,7 +6,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import { initialMessages, InputMessage } from '../message';
 import { ContentLine, LoadingChat, ChatGPTMessage } from '../../components';
-import { IconArrow } from '../../assets/Icons';
+import { IconArrow } from '../../assets/icons';
 
 const COOKIE_NAME = 'nextjs-example-ai-chat-gpt3';
 

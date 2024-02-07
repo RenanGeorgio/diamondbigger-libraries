@@ -1,23 +1,22 @@
-import IconArrow from './icon-arrow';
-import IconAvatar from './icon-avatar';
-import IconCheck from './icon-check';
-import type { Props as IconCheckProps } from './icon-check';
-import IconCopy from './icon-copy';
-import IconDownload from './icon-download';
-import type { Props as IconDownloadProps } from './icon-download';
-import { EyeOpen, EyeHidden } from './icon-eyes';
-import type { Props as IconEyeProps } from './icon-eyes';
-import IconGithub from './icon-github';
-import type { Props as IconGithubProps } from './icon-github';
-import IconLinkedin from './icon-linkedin';
-import type { Props as IconLinkedinProps } from './icon-linkedin';
-import IconPin from './icon-pin';
-import type { Props as IconPinProps } from './icon-pin';
-import IconPlataFormLogo from './icon-plataform';
-import type { Props as IconPlataFormProps } from './icon-plataform';
-import IconTwitter from './icon-twitter';
-import type { Props as IconTwitterProps } from './icon-twitter';
-import { IconLogo, IconLogoProps } from './Logo';
+import IconArrow from './Arrow';
+import IconAvatar from './Avatar';
+import IconCheck from './Check';
+import type { Props as IconCheckProps } from './Check';
+import IconCopy from './Copy';
+import { EyeOpen, EyeHidden } from './Eyes';
+import type { Props as IconEyeProps } from './Eyes';
+import IconGithub from './Github';
+import type { Props as IconGithubProps } from './Github';
+import IconLinkedin from './Linkedin';
+import type { Props as IconLinkedinProps } from './Linkedin';
+import IconPin from './Pin';
+import type { Props as IconPinProps } from './Pin';
+import IconPlataFormLogo from './Plataform';
+import type { Props as IconPlataFormProps } from './Plataform';
+import IconTwitter from './Twitter';
+import type { Props as IconTwitterProps } from './Twitter';
+import IconLogo from './Logo';
+import type { Props as IconLogoProps } from './Logo';
 
 export {
     IconArrow,
@@ -25,8 +24,6 @@ export {
     IconCheck,
     IconCheckProps,
     IconCopy,
-    IconDownload,
-    IconDownloadProps,
     EyeOpen, 
     EyeHidden,
     IconEyeProps,

@@ -22,11 +22,20 @@
     "declarationDir": "types",
     "sourceMap": true,
     "emitDeclarationOnly": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
   },
   "exclude": [
     "node_modules",
     "dist"
+  ],
+  "include": [
+    "./declarations.d.ts",
+    "./src"
   ],
   "typeRoots": ["node_modules/@types"]
 }

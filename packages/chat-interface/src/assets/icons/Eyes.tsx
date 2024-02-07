@@ -1,4 +1,4 @@
-import styles from './styles/icon-transition.module.css';
+import styles from './styles/transition.module.css';
 
 export type Props = {
   className?: any;
