@@ -1,4 +1,4 @@
-import ClassNameGenerator from '../ClassNameGenerator';
+import ClassNameGenerator from './classNameGenerator';
 
 export type GlobalStateSlot = keyof typeof globalStateClasses;
 

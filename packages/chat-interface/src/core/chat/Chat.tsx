@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
-import { CustomAccordion, CustomAccordionItem, CustomAccordionSkeleton } from '../../libs/accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
+import { CustomAccordion, CustomAccordionItem, CustomAccordionSkeleton } from '../../libs/Accordion';
 import { initialMessages, InputMessage } from '../message';
 import { ContentLine, LoadingChat, ChatGPTMessage } from '../../components';
 import { IconArrow } from '../../assets/icons';
@@ -102,9 +101,7 @@ const Chat: React.FC = () => {
 
   return (
     <div style={{ borderRadius: '5px', zIndex:999999, marginBottom:'2rem', maxWidth:300 }}>
-      <CustomAccordion
-        sx={{ borderRadius: '5px'}}
-        title={() => <span>Supply Pharma</span>}>
+      <CustomAccordion>
           <p>Supply Pharma</p>
           <div style={{
             height: '300px',
@@ -114,9 +111,11 @@ const Chat: React.FC = () => {
             marginBottom: '3px'
           }}>
           <CustomAccordionItem
-            renderToggle={<IconArrow />} 
+            title="Supply Pharma"
+            renderToggle={() => (<IconArrow />)} 
             onHeadingClick={({ isOpen }) => handleChange('panel1')}
           >
+            Supply Pharma
             <div  className="rounded-2xl border-zinc-100  lg:border lg:p-6 border-r-2 h-60 overflow-scroll">
               <div style={{overflowY:'scroll',height:'240px'}}>
                 {messages?.length > 0 ? 

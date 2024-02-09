@@ -4,8 +4,7 @@ import {
   KeyboardEvent,
   MouseEventHandler,
   PropsWithChildren,
-  ReactElement,
-  ReactNode,
+  ReactElement
 } from 'react';
 import { AccordionItem as CarbonAccordionItem } from '@carbon/react';
 
@@ -27,7 +26,7 @@ interface Parms {
   renderToggle?: (
     props: PropsWithChildren<AccordionToggleProps>
   ) => ReactElement;
-  title?: ReactNode;
+  title?: React.ReactNode;
   handleAnimationEnd?: AnimationEventHandler<HTMLElement>;
 }
 
@@ -51,4 +50,4 @@ const AccordionItem = function AccordionItem({ children, ...rest }: PropsWithChi
   );
 }
 
-export default AccordionItem
+export { AccordionItem }

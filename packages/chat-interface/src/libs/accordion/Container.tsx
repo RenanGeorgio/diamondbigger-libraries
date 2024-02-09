@@ -19,4 +19,4 @@ const Accordion = function Accordion({ children, ...rest }: PropsWithChildren<Pr
   );
 }
 
-export default Accordion
+export { Accordion }

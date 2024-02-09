@@ -1,4 +1,4 @@
-import generateUtilityClass from '../generateUtilityClass';
+import generateUtilityClass from './generateUtilityClass';
 
 export default function generateUtilityClasses<T extends string>(
   componentName: string,

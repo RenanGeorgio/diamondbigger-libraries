@@ -1,6 +1,6 @@
 import { AccordionSkeleton as CarbonAccordionSkeleton } from '@carbon/react';
 
-interface Params {
+interface Parms {
   align?: 'start' | 'end';
   className?: string;
   count?: number;
@@ -18,4 +18,4 @@ const AccordionSkeleton = function AccordionSkeleton({ children, ...rest }: Prop
   );
 }
 
-export default AccordionSkeleton
+export { AccordionSkeleton }
