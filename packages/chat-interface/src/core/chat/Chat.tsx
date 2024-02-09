@@ -85,12 +85,6 @@ const Chat: React.FC = () => {
     }
   }
 
-//   const button =document.querySelector("button")
-
-//  const handleClose(){
-
-//  }
-
   const handleChange = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
     setExpanded(newExpanded ? panel : null);
   };
@@ -101,7 +95,7 @@ const Chat: React.FC = () => {
 
   return (
     <div style={{ borderRadius: '5px', zIndex:999999, marginBottom:'2rem', maxWidth:300 }}>
-      <CustomAccordion>
+      <CustomAccordion align='start' size='md'>
           <p>Supply Pharma</p>
           <div style={{
             height: '300px',
@@ -113,7 +107,7 @@ const Chat: React.FC = () => {
           <CustomAccordionItem
             title="Supply Pharma"
             renderToggle={() => (<IconArrow />)} 
-            onHeadingClick={({ isOpen }) => handleChange('panel1')}
+            onClick={() => handleChange('panel1')}
           >
             Supply Pharma
             <div  className="rounded-2xl border-zinc-100  lg:border lg:p-6 border-r-2 h-60 overflow-scroll">

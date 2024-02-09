@@ -9,7 +9,7 @@ import postcss from 'rollup-plugin-postcss';
 import styles from 'rollup-plugin-styles';
 import sass from 'sass';
 import autoprefixer from 'autoprefixer';
-//import svgr from '@svgr/rollup';
+import svgr from '@svgr/rollup';
 
 import pkg from './package.json' assert {type: 'json'};
 
@@ -55,36 +55,37 @@ export default [
         }
       }*/),
       resolve(),
-      /*babel({
+      babel({
         exclude: 'node_modules/**',
         babelHelpers: 'bundled',
         plugins: ['external-helpers']
-      }),*/
+      }),
       typescript({
         tsconfig: './tsconfig.json'
       }),
-      //styles(),
       styles(
         {
-          processor: () => postcss([autoprefixer]),
           extensions: ['.scss','.css'],
           autoModules: true,
-          use: ['sass'],
-          preprocessor: (content, id) => new Promise((res) => {
-            const result = sass.renderSync({ file: id })
-    
-            res({ code: result.css.toString() })
+          processor: () => postcss({
+            extensions: ['.css'],
+            preprocessor: (content, id) => new Promise((res) => {
+              const result = sass.renderSync({ file: id })
+      
+              res({ code: result.css.toString() })
+            }),
+            plugins: [autoprefixer],
+            modules: {
+              scopeBehaviour: 'global',
+            },
+            sourceMap: true,
+            extract: true,
           }),
-          plugins: [autoprefixer],
-          modules: {
-            scopeBehaviour: 'global',
-          },
-          sourceMap: true,
-          extract: true,
+          use: ['sass']
         }
       ),
-      //svgr(),
-      isDev() ? terser() : null
+      svgr(),
+      !isDev() ? terser() : null
     ]
   },
   {
