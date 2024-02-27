@@ -100,7 +100,6 @@ const Chat: React.FC = () => {
           <div style={{
             height: '300px',
             background: '#f5f1f0',
-            padding: '3px',
             borderRadius: '1px',
             marginBottom: '3px'
           }}>
@@ -111,7 +110,7 @@ const Chat: React.FC = () => {
           >
             Supply Pharma
             <div  className="rounded-2xl border-zinc-100  lg:border lg:p-6 border-r-2 h-60 overflow-scroll">
-              <div style={{overflowY:'scroll',height:'240px'}}>
+              <div style={{overflowY:'scroll',height:'240px', overflowX:'hidden' }}>
                 {messages?.length > 0 ? 
                   <>
                     {messages?.map(({ content, role }: ChatGPTMessage, index: number) => (
