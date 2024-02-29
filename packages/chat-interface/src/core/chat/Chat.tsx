@@ -4,6 +4,7 @@ import { CustomAccordion, CustomAccordionItem, CustomAccordionSkeleton } from '.
 import { initialMessages, InputMessage } from '../message';
 import { ContentLine, LoadingChat, ChatGPTMessage } from '../../components';
 import { IconArrow } from '../../assets/icons';
+import style from './Chat.module.css';
 
 const COOKIE_NAME = 'nextjs-example-ai-chat-gpt3';
 
@@ -94,24 +95,18 @@ const Chat: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ borderRadius: '5px', zIndex:999999, marginBottom:'2rem', maxWidth:300 }}>
+    <div className={style.chatwrapper}>
       <CustomAccordion align='start' size='md'>
           <p>Supply Pharma</p>
-          <div style={{
-            height: '300px',
-            background: '#f5f1f0',
-            padding: '3px',
-            borderRadius: '1px',
-            marginBottom: '3px'
-          }}>
+          <div className={style.chatcontainer}>
           <CustomAccordionItem
             title="Supply Pharma"
             renderToggle={() => (<IconArrow />)} 
             onClick={() => handleChange('panel1')}
           >
             Supply Pharma
-            <div  className="rounded-2xl border-zinc-100  lg:border lg:p-6 border-r-2 h-60 overflow-scroll">
-              <div style={{overflowY:'scroll',height:'240px'}}>
+            <div  className={style.box}>
+              <div className={style.boxcontent} >
                 {messages?.length > 0 ? 
                   <>
                     {messages?.map(({ content, role }: ChatGPTMessage, index: number) => (
@@ -122,7 +117,7 @@ const Chat: React.FC = () => {
                 }
                 {loading && <LoadingChat />}
               </div>
-              <div style={{ marginTop:'5px', paddingBottom:'25px' }}>
+              <div className={style.boxinputmessage}>
                 <InputMessage
                   input={input}
                   setInput={setInput}
