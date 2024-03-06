@@ -8,6 +8,7 @@ import style from './Chat.module.css';
 
 const COOKIE_NAME = 'nextjs-example-ai-chat-gpt3';
 
+
 const Chat: React.FC = () => {
   console.log(initialMessages);
   const [messages, setMessages] = useState<ChatGPTMessage[]>([]);
