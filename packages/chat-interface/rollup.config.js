@@ -1,12 +1,15 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
-//import { babel } from '@rollup/plugin-babel';
+import { babel } from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
 import { dts } from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
-//import svgr from '@svgr/rollup';
+import styles from 'rollup-plugin-styles';
+import sass from 'sass';
+import autoprefixer from 'autoprefixer';
+import svgr from '@svgr/rollup';
 
 import pkg from './package.json' assert {type: 'json'};
 
@@ -39,31 +42,50 @@ export default [
       warn(warning)
     },
     external: [
-      '@mui/material',
       'clsx',
       'react-wrap-balancer',
       'react-cookie'
     ],
     plugins: [
       peerDepsExternal(),
-      commonjs(),
+      commonjs(/*{
+        include: 'node_modules/**',
+        namedExports: {
+          'react-is': ['isForwardRef', 'isValidElementType']
+        }
+      }*/),
       resolve(),
-      /*babel({
+      babel({
         exclude: 'node_modules/**',
+        babelHelpers: 'bundled',
         plugins: ['external-helpers']
-      }),*/
+      }),
       typescript({
         tsconfig: './tsconfig.json'
       }),
-      postcss(
-        /*{
-        extensions: ['.css'],
-        extract: false,
-        modules: true
-      }*/
+      styles(
+        {
+          extensions: ['.scss','.css'],
+          autoModules: true,
+          processor: () => postcss({
+            extensions: ['.css'],
+            preprocessor: (content, id) => new Promise((res) => {
+              const result = sass.renderSync({ file: id })
+      
+              res({ code: result.css.toString() })
+            }),
+            plugins: [autoprefixer],
+            modules: {
+              scopeBehaviour: 'global',
+            },
+            sourceMap: true,
+            extract: true,
+          }),
+          use: ['sass']
+        }
       ),
-      //svgr(),
-      isDev() ? terser() : null
+      svgr(),
+      !isDev() ? terser() : null
     ]
   },
   {
